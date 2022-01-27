@@ -36,7 +36,7 @@ mongoose
     dbName: process.env.DB_NAME,
   })
   .then(() => {
-    console.log("Connected to database");
+    console.log(`Connected to ${process.env.DB_NAME}`);
   })
   .catch((err) => {
     console.log(err);
@@ -45,5 +45,5 @@ mongoose
 const PORT = process.env.PORT || 3000;
 //Server
 app.listen(PORT, () => {
-  console.log("Server is running on port http://localhost:3000");
+  console.log(`Server is running on port ${PORT}`);
 });

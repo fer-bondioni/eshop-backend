@@ -66,7 +66,7 @@ router.post("/", async (req, res) => {
     zip: req.body.zip,
     country: req.body.country,
     phone: req.body.phone,
-    zip: req.body.zip,
+    status: req.body.status,
     totalPrice: totalPrice,
     user: req.body.user,
   });
