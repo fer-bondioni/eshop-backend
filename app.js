@@ -32,7 +32,9 @@ app.use(`${api}/orders`, ordersRouter);
 app.use(`${api}/users`, usersRouter);
 //Database
 mongoose
-  .connect(process.env.CONNECTION_STRING)
+  .connect(process.env.CONNECTION_STRING, {
+    dbName: process.env.DB_NAME,
+  })
   .then(() => {
     console.log("Connected to database");
   })
@@ -40,7 +42,8 @@ mongoose
     console.log(err);
   });
 
+const PORT = process.env.PORT || 3000;
 //Server
-app.listen(3000, () => {
+app.listen(PORT, () => {
   console.log("Server is running on port http://localhost:3000");
 });
